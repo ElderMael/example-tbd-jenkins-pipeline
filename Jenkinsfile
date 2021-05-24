@@ -10,7 +10,7 @@ pipeline {
 
         stage('Testing') {
 
-            paralell {
+            parallel {
                 stage('Unit tests') {
                     steps {
                         sh 'echo testing code'
