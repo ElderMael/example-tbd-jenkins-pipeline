@@ -198,6 +198,12 @@ pipeline {
                         sh 'echo testing code'
                     }
                 }
+
+                stage('Release to Prod?') {
+                    steps {
+                        sh 'echo testing code'
+                    }
+                }
             }
         }
 
