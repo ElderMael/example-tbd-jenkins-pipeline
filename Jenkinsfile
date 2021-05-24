@@ -34,6 +34,12 @@ pipeline {
                         sh 'echo testing code'
                     }
                 }
+
+                stage('Contract testing') {
+                    steps {
+                        sh 'echo testing code'
+                    }
+                }
             }
 
         }
