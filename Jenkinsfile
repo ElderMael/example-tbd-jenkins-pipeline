@@ -44,7 +44,7 @@ pipeline {
             }
         }
 
-        stage('Smoke Tests') {
+        stage('E2E Tests Dev') {
             steps {
                 sh 'echo deploying to dev environment'
             }
@@ -56,7 +56,7 @@ pipeline {
             }
         }
 
-        stage('Smoke Tests') {
+        stage('E2E Tests Qa') {
             steps {
                 sh 'echo deploying to dev environment'
             }
@@ -68,19 +68,19 @@ pipeline {
             }
         }
 
-        stage('Smoke Tests') {
+        stage('E2E Tests Staging') {
             steps {
                 sh 'echo deploying to dev environment'
             }
         }
 
-        stage('Deploy to Production') {
+        stage('Deploy to Prod') {
             steps {
                 sh 'echo deploying to dev environment'
             }
         }
 
-        stage('Smoke Tests') {
+        stage('E2E Tests Prod') {
             steps {
                 sh 'echo deploying to dev environment'
             }
