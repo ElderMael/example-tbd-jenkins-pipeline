@@ -5,23 +5,27 @@ pipeline {
     stages {
 
         stage('Testing') {
-            stage('Unit tests') {
-                steps {
-                    sh 'echo testing code'
-                }
-            }
 
-            stage('Integration tests') {
-                steps {
-                    sh 'echo testing code'
+            paralell {
+                stage('Unit tests') {
+                    steps {
+                        sh 'echo testing code'
+                    }
                 }
-            }
 
-            stage('Isolation tests') {
-                steps {
-                    sh 'echo testing code'
+                stage('Integration tests') {
+                    steps {
+                        sh 'echo testing code'
+                    }
+                }
+
+                stage('Isolation tests') {
+                    steps {
+                        sh 'echo testing code'
+                    }
                 }
             }
+            
         }
 
         stage('Build') {
