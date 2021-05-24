@@ -148,10 +148,33 @@ pipeline {
                         sh 'echo testing code'
                     }
                 }
-                
+
             }
         }
 
+    }
+
+    stage('Canary Tests') {
+        parallel {
+
+            stage('Activate feature flags') {
+                steps {
+                    sh 'echo testing code'
+                }
+            }
+
+            stage('Release To Some Users') {
+                steps {
+                    sh 'echo testing code'
+                }
+            }
+        }
+    }
+
+    stage('Release to Prod') {
+        steps {
+            sh 'echo deploying to dev environment'
+        }
     }
 
 }
