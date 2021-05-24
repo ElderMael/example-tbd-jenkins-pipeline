@@ -81,8 +81,18 @@ pipeline {
         }
 
         stage('E2E Tests Dev') {
-            steps {
-                sh 'echo deploying to dev environment'
+            parallel {
+                stage('E2E Tests Dev') {
+                    steps {
+                        sh 'echo testing dev'
+                    }
+                }
+
+                stage('Promote to QA?') {
+                    steps {
+                        sh 'echo testing dev'
+                    }
+                }
             }
         }
 
@@ -93,8 +103,18 @@ pipeline {
         }
 
         stage('E2E Tests Qa') {
-            steps {
-                sh 'echo deploying to dev environment'
+            parallel {
+                stage('E2E Tests Qa') {
+                    steps {
+                        sh 'echo testing dev'
+                    }
+                }
+
+                stage('Promote to Stage?') {
+                    steps {
+                        sh 'echo testing dev'
+                    }
+                }
             }
         }
 
@@ -122,6 +142,12 @@ pipeline {
                 stage('Security scans') {
                     steps {
                         sh 'echo testing code'
+                    }
+                }
+
+                stage('Promote to Prod?') {
+                    steps {
+                        sh 'echo testing dev'
                     }
                 }
 
